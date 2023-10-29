@@ -1,0 +1,40 @@
+<html>
+<body>
+<p id="counter">
+  0
+</p>
+<button id="plus">
+  Plus
+</button>
+<button id="minus">
+  Minus
+</button>
+</body>
+<script>
+let count = 0
+const counterElement = document.getElementById("counter")
+const plusBtn = document.getElementById("plus"),
+  minusBtn = document.getElementById("minus")
+
+plusBtn.addEventListener("click", () => {
+  count += 1
+
+  updateCounterElement(count)
+})
+
+minusBtn.addEventListener("click", () => {
+  if (count - 1 < 0) {
+    return
+  }
+
+  count = count - 1
+
+  updateCounterElement(count)
+})
+
+function updateCounterElement(newCount) {
+  counterElement.innerText = count
+}
+
+</script>
+</html>
